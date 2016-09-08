@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'river.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'river',
+        'USER': 'river',
+        'PASSWORD': 'river',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -119,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# read the local settings file containing the local database credentials, development-only installed apps, etc.
+f = os.path.join(os.path.dirname(os.path.abspath(__file__)), "local_settings.py")
+if os.path.exists(f):
+    exec(open(f, "rb").read())
