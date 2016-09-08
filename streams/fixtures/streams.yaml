@@ -1,0 +1,17 @@
+- model: streams.stream
+  pk: 1
+  fields:
+    name: 'Employee onboarding'
+    users: [1]
+- model: streams.task
+  pk: 1
+  fields:
+    name: 'Email Simeon'
+    order: 0
+    stream_id: 1
+- model: streams.task
+  pk: 2
+  fields:
+    name: 'Email Tim'
+    order: 1
+    stream_id: 1

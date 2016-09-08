@@ -37,6 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Graphql is awesome
+    'django_graphiql',
+
+    # This will also make the `graphql_schema` management command available
+    'graphene.contrib.django',
+
+    # Install the streams app
+    'streams',
+
+    # Install the services app
+    'services',
 ]
 
 MIDDLEWARE_CLASSES = [
